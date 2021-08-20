@@ -2,13 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:mobile_banking/widgets/category_card.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  // final bool isActive;
+  const Home({
+    Key? key,
+    // this.isActive = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Container(
+        height: 60,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            BottonNavigator(isActive: true),
+            BottonNavigator(isActive: false),
+            BottonNavigator(isActive: false),
+            BottonNavigator(isActive: false),
+          ],
+        ),
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 50, right: 15, left: 15),
+        padding:
+            const EdgeInsets.only(top: 50, right: 15, left: 15, bottom: 15),
         child: Container(
           child: Column(
             children: [
@@ -186,6 +204,22 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class BottonNavigator extends StatelessWidget {
+  final bool isActive;
+  const BottonNavigator({
+    Key? key,
+    this.isActive = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Icon(Icons.dashboard, color: isActive ? Colors.blue : Colors.grey),
     );
   }
 }

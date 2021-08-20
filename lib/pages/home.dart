@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/widgets/bottom_navifation.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+// import 'package:mobile_banking/widgets/bottom_navifation.dart';
 import 'package:mobile_banking/widgets/category_card.dart';
 
 class Home extends StatelessWidget {
@@ -11,6 +13,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: Container(
         height: 60,
@@ -18,10 +21,34 @@ class Home extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            BottonNavigator(isActive: true),
-            BottonNavigator(isActive: false),
-            BottonNavigator(isActive: false),
-            BottonNavigator(isActive: false),
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(
+                "assets/icon/SVG/home.svg",
+                color: Colors.blue,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(
+                "assets/icon/SVG/floder.svg",
+                color: Colors.grey,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(
+                "assets/icon/SVG/pie-chart.svg",
+                color: Colors.grey,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(
+                "assets/icon/SVG/user.svg",
+                color: Colors.grey,
+              ),
+            ),
           ],
         ),
       ),
@@ -109,8 +136,8 @@ class Home extends StatelessWidget {
                       gradient: LinearGradient(
                           colors: [Colors.blue, Color(0xff1565C0)])),
                   child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,

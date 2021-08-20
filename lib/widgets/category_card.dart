@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CategoryCard extends StatelessWidget {
   final String title;
   final String subTitle;
-  final Icon icon;
+  final SvgPicture icon;
   final Function press;
   const CategoryCard({
     Key? key,
@@ -55,7 +56,10 @@ class CategoryCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    child: icon,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: icon,
+                    ),
                   ),
                   Text(
                     title,

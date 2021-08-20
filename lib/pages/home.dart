@@ -97,10 +97,12 @@ class Home extends StatelessWidget {
                         Radius.circular(25),
                       ),
                     ),
-                    child: Icon(
-                      Icons.notifications,
-                      size: 20,
-                      color: Colors.black54,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: SvgPicture.asset(
+                        "assets/icon/SVG/notification.svg",
+                        color: Colors.grey,
+                      ),
                     ),
                   )
                 ],
@@ -192,8 +194,8 @@ class Home extends StatelessWidget {
                     CategoryCard(
                       title: "Send \nMoney",
                       subTitle: "To acc to acc",
-                      icon: Icon(
-                        Icons.send,
+                      icon: SvgPicture.asset(
+                        "assets/icon/SVG/send-2.svg",
                         color: Colors.orange,
                       ),
                       press: () {},
@@ -201,8 +203,8 @@ class Home extends StatelessWidget {
                     CategoryCard(
                       title: "Receive Money",
                       subTitle: "Manage Account",
-                      icon: Icon(
-                        Icons.inbox_sharp,
+                      icon: SvgPicture.asset(
+                        "assets/icon/SVG/inbox.svg",
                         color: Colors.green,
                       ),
                       press: () {},
@@ -210,18 +212,18 @@ class Home extends StatelessWidget {
                     CategoryCard(
                       title: "Mobile \nPrepaid",
                       subTitle: "Recharge Mobile",
-                      icon: Icon(
-                        Icons.send,
-                        color: Colors.orange,
+                      icon: SvgPicture.asset(
+                        "assets/icon/SVG/cloud.svg",
+                        color: Colors.purple,
                       ),
                       press: () {},
                     ),
                     CategoryCard(
                       title: "Bank to Bank",
                       subTitle: "Send Money",
-                      icon: Icon(
-                        Icons.inbox_sharp,
-                        color: Colors.green,
+                      icon: SvgPicture.asset(
+                        "assets/icon/SVG/city.svg",
+                        color: Colors.yellow,
                       ),
                       press: () {},
                     ),

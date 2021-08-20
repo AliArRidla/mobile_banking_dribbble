@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/widgets/category_card.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -143,12 +144,14 @@ class Home extends StatelessWidget {
                   mainAxisSpacing: 20,
                   children: [
                     CategoryCard(
-                        title: "Send \nMoney",
-                        subTitle: "To acc to acc",
-                        icon: Icon(
-                          Icons.send,
-                          color: Colors.orange,
-                        )),
+                      title: "Send \nMoney",
+                      subTitle: "To acc to acc",
+                      icon: Icon(
+                        Icons.send,
+                        color: Colors.orange,
+                      ),
+                      press: () {},
+                    ),
                     CategoryCard(
                       title: "Receive Money",
                       subTitle: "Manage Account",
@@ -156,14 +159,17 @@ class Home extends StatelessWidget {
                         Icons.inbox_sharp,
                         color: Colors.green,
                       ),
+                      press: () {},
                     ),
                     CategoryCard(
-                        title: "Mobile \nPrepaid",
-                        subTitle: "Recharge Mobile",
-                        icon: Icon(
-                          Icons.send,
-                          color: Colors.orange,
-                        )),
+                      title: "Mobile \nPrepaid",
+                      subTitle: "Recharge Mobile",
+                      icon: Icon(
+                        Icons.send,
+                        color: Colors.orange,
+                      ),
+                      press: () {},
+                    ),
                     CategoryCard(
                       title: "Bank to Bank",
                       subTitle: "Send Money",
@@ -171,78 +177,11 @@ class Home extends StatelessWidget {
                         Icons.inbox_sharp,
                         color: Colors.green,
                       ),
+                      press: () {},
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CategoryCard extends StatelessWidget {
-  final String title;
-  final String subTitle;
-  final Icon icon;
-  const CategoryCard({
-    Key? key,
-    required this.title,
-    required this.subTitle,
-    required this.icon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Color(0xfff5f5f5)),
-        boxShadow: [
-          BoxShadow(
-              offset: Offset(0, 17),
-              color: Colors.grey,
-              blurRadius: 17,
-              spreadRadius: -23)
-        ],
-        borderRadius: BorderRadius.circular(13),
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () {},
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
-                      spreadRadius: 1,
-                      blurRadius: 2,
-                      offset: Offset(1, 3),
-                    )
-                  ],
-                ),
-                child: icon,
-              ),
-              Text(
-                title,
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 18,
-                ),
-              ),
-              Text(subTitle)
             ],
           ),
         ),

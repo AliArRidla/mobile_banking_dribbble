@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/widgets/bottom_navifation.dart';
 import 'package:mobile_banking/widgets/category_card.dart';
 
 class Home extends StatelessWidget {
@@ -82,7 +83,7 @@ class Home extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 5, vertical: 20),
                 child: Container(
                   height: 45,
-                  padding: EdgeInsets.only(top: 15, left: 20, bottom: 17),
+                  padding: EdgeInsets.only(top: 15, left: 20, bottom: 8),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.grey[100],
@@ -99,8 +100,8 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 15),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
                 child: Container(
                   height: 150,
                   decoration: BoxDecoration(
@@ -108,8 +109,8 @@ class Home extends StatelessWidget {
                       gradient: LinearGradient(
                           colors: [Colors.blue, Color(0xff1565C0)])),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -204,22 +205,6 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class BottonNavigator extends StatelessWidget {
-  final bool isActive;
-  const BottonNavigator({
-    Key? key,
-    this.isActive = false,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Icon(Icons.dashboard, color: isActive ? Colors.blue : Colors.grey),
     );
   }
 }
